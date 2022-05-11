@@ -554,13 +554,13 @@ body {
       rgba(10, 10, 10, 0.3),
       rgb(10, 10, 10, 1)
     ),
-    url("https://github.com/krapas170/krapas170.github.io/blob/cc7f230b25451c7750cf66931d792d976a33e26a/background.png");
+    url("https://krapas170.github.io/background.jfif");
   --background-background: linear-gradient(
       0deg,
       rgba(10, 10, 10, 1),
       rgba(10, 10, 10, 0.6)
     ),
-    url("https://github.com/krapas170/krapas170.github.io/blob/cc7f230b25451c7750cf66931d792d976a33e26a/background.png") center center fixed;
+    url("https://krapas170.github.io/background.jfif") center center fixed;
   --height: 50vh;
 }
 
@@ -591,6 +591,6 @@ body {
         rgba(10, 10, 10, 1),
         rgba(10, 10, 10, 0)
       ),
-      url("https://github.com/krapas170/krapas170.github.io/blob/cc7f230b25451c7750cf66931d792d976a33e26a/background.png") !important;
+      url("https://krapas170.github.io/background.jfif") !important;
   }
 }
