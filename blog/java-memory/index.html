@@ -62,24 +62,24 @@
       <img src="https://images.unsplash.com/photo-1556814278-8906c7d3a05f?w=1050" />
       <p id="currentVersion">
         <script type="text/javascript">
-          fetch('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json')
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              appendData(data);
-            })
-            .catch(function (err) {
-              console.log('error: ' + err);
-            });
-          function appendData(data) {
-            let mainContainer = document.getElementById("currentVersion");
-            for (let i = 0; i < data.length; i++) {
-              let div = document.createElement("div");
-              div.innerHTML = 'Die aktuellste Version ist v' + data[i].version + ' vom ' + data[i].date;
-              mainContainer.appendChild(div);
-            }
+          alert("aktuelle Version")
+          const myJSON = $.getJSON('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json', function (data) { });
+          var obj = JSON.parse(data);
+          let mainContainer = document.getElementById("currentVersion");
+          alert(obj.version + " vom " + obj.date)
+          currentVersion.innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
+
+
+
+          function readVersion() {
+            fetch('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json')
+              .then(response => response.json())
+              .then(data => {
+                console.log(data);
+                document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
+              })
           }
+
         </script>
       </p>
     </div>
