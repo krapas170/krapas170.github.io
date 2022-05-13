@@ -140,10 +140,13 @@
       repo: 'Java-Memory'
     }));
 
-    console.log("request with getJSON with console output")
+    console.log("request with getJSON with console output 1")
     var rawbase = 'https://api.github.com/';
+    console.log("request with getJSON with console output 2")
     var jsonloc = 'repos/krapas170/Java-Memory/releases';
+    console.log("request with getJSON with console output 3")
     $.getJSON(rawbase + jsonloc, function (data) {
+      console.log("request with getJSON with console output 4")
       console.log(data);
       //document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
     });
