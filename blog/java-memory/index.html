@@ -69,6 +69,18 @@
           let mainContainer = document.getElementById("currentVersion");
           alert(obj.version + " vom " + obj.date)
           currentVersion.innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
+          
+          fetch('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json')
+
+              .then(response => response.json())
+
+              .then(data => {
+
+                console.log(data);
+
+                document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
+
+})
 
 
 
