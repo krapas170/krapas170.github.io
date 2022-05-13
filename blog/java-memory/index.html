@@ -173,7 +173,7 @@
     function myFunction(arr) {
       var out = "";
       var i;
-      for (i = 0; i < arr.length; i++) { //out += 'arr[i].keyofjson'
+      for (i = 0; i < arr.length; i++) { //out += "arr[i].keyofjson" + "arr[i].keyofjson" + 
         out +=
           "<div class='col-md-9' data-test-selector='release-card'>" +
           "<div data-view-component='true' class='Box'>" +
@@ -539,144 +539,7 @@
           "</div >" +
           "</div >" +
 
-          "</div >" +
-          "  <div class='d-flex flex-column flex-md-row my-5 flex-justify-center'>" +
-          "    <div class='col-md-2 d-flex flex-md-column flex-row flex-wrap pr-md-6 mb-2 mb-md-0 flex-items-start pt-md-4'>" +
-          "      <div class='mb-2 f4 mr-3 mr-md-0 col-12'>" +
-          "        <relative-time datetime='2022-05-02T12:54:59Z' class='no-wrap'></relative-time>" +
-          "      </div>" +
-
-          "      <div class='mb-md-2 mr-3 mr-md-0'>" +
-          "        <img src='https://avatars.githubusercontent.com/u/57595818?s=40&amp;v=4' alt='@krapas170' size='20'" +
-          "          height='20' width='20' data-view-component='true' class='avatar avatar-small circle' />" +
-          "        <a class='color-fg-muted wb-break-all' data-hovercard-type='user'" +
-          "          data-hovercard-url='/users/krapas170/hovercard' data-octo-click='hovercard-link-click'" +
-          "          data-octo-dimensions='link_type:self' href='/krapas170'>krapas170</a>" +
-          "      </div>" +
-
-          "      <div class='mr-3 mr-md-0 d-flex' data-pjax='#repo-content-pjax-container'>" +
-          "        <a href='/krapas170/Java-Memory/tree/1.2' data-view-component='true' class='Link--muted'>" +
-          "          <div data-view-component='true' class='css-truncate css-truncate-target'>" +
-          "            <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
-          "              data-view-component='true' class='octicon octicon-tag'>" +
-          "              <path fill-rule='evenodd'" +
-          "                d='M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z'>" +
-          "              </path>" +
-          "            </svg>" +
-          "            <span class='ml-1 wb-break-all'>" +
-          "              1.2" +
-          "            </span>" +
-          "          </div>" +
-          "        </a>" +
-
-          "      </div>" +
-          "      <div style='position: relative; top: 1px;' class='mb-md-2 mr-3 mr-md-0'" +
-          "        data-pjax='#repo-content-pjax-container'>" +
-          "        <a data-hovercard-type='commit'" +
-          "          data-hovercard-url='/krapas170/Java-Memory/commit/145f650248d949b0b0d8190cc86915aa4f1badf6/hovercard'" +
-          "          href='/krapas170/Java-Memory/commit/145f650248d949b0b0d8190cc86915aa4f1badf6' data-view-component='true'" +
-          "          class='Link--muted mb-2'>" +
-          "          <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
-          "            data-view-component='true' class='octicon octicon-git-commit'>" +
-          "            <path fill-rule='evenodd'" +
-          "              d='M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z'>" +
-          "            </path>" +
-          "          </svg>" +
-          "          <code class='f5 ml-1 wb-break-all'>145f650</code></a>" +
-
-          "      </div>" +
-          "      <div class='mb-md-2 mr-3 mr-md-0 hide-sm'>" +
-
-          "        <details class='details-reset details-overlay ' id='tag-select-menu-4e9ce6de-d301-11ec-96dd-edf2517cd32d'>" +
-          "          <summary data-view-component='true' class='btn-sm btn text-left'> <i></i><span" +
-          "            data-menu-button=''>Compare</span><svg aria-hidden='true' height='16' viewBox='0 0 16 16'" +
-          "              version='1.1' width='16' data-view-component='true'" +
-          "              class='octicon octicon-triangle-down ml-2 mr-n1'>" +
-          "              <path" +
-          "                d='M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z'>" +
-          "              </path>" +
-          "            </svg>" +
-
-          "          </summary>" +
-
-          "          <details-menu class='SelectMenu text-md-left '>" +
-          "            <div class='SelectMenu-modal'>" +
-          "              <header class='SelectMenu-header'>" +
-          "                <span class='SelectMenu-title'>Choose a tag to compare</span>" +
-          "                <button class='SelectMenu-closeButton' type='button'" +
-          "                  data-toggle-for='tag-select-menu-4e9ce6de-d301-11ec-96dd-edf2517cd32d'>" +
-          "                  <svg aria-label='Close menu' aria-hidden='false' role='img' height='16'" +
-          "                    viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
-          "                    class='octicon octicon-x'>" +
-          "                    <path fill-rule='evenodd'" +
-          "                      d='M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z'>" +
-          "                    </path>" +
-          "                  </svg>" +
-          "                </button>" +
-          "              </header>" +
-
-          "              <div class='SelectMenu-filter'>" +
-          "                <input aria-label='Find a tag' autofocus class='SelectMenu-input form-control'" +
-          "                  data-ref-filter placeholder='Find a tag' type='text'>" +
-          "              </div>" +
-
-          "              <ref-selector type='tag' query-endpoint='/krapas170/Java-Memory/refs'" +
-          "                cache-key='v0:1652443888.949455' current-committish='MS4y' default-branch='bWFpbg=='" +
-          "                name-with-owner='a3JhcGFzMTcwL0phdmEtTWVtb3J5' prefetch-on-mouseover>" +
-          "                <template data-target='ref-selector.fetchFailedTemplate'>" +
-          "                  <div class='SelectMenu-message' data-index='{{ index }}'>Could not load tags</div>" +
-          "                </template>" +
-
-          "                <template data-target='ref-selector.noMatchTemplate'>" +
-          "                  <div class='SelectMenu-message' data-index='{{ index }}'>Nothing to show</div>" +
-          "                </template>" +
-
-          "                <template data-target='ref-selector.itemTemplate'>" +
-          "                  <a href='/krapas170/Java-Memory/compare/{{ urlEncodedRefName }}...1.2'" +
-          "                    class='SelectMenu-item' role='menuitemradio' rel='nofollow'" +
-          "                    aria-checked='{{ isCurrent }}' data-index='{{ index }}'>" +
-          "                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
-          "                      data-view-component='true'" +
-          "                      class='octicon octicon-check SelectMenu-icon SelectMenu-icon--check'>" +
-          "                      <path fill-rule='evenodd'" +
-          "                        d='M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z'>" +
-          "                      </path>" +
-          "                    </svg>" +
-          "                    <span class='flex-1 css-truncate css-truncate-overflow {{ isFilteringClass }}'>{{" +
-          "                      refName" +
-          "                    }}</span>" +
-          "                    <span hidden='{{ isNotDefault }}'" +
-          "                      class='Label Label--secondary flex-self-start'>default</span>" +
-          "                  </a>" +
-          "                </template>" +
-
-
-          "                <template data-target='ref-selector.hiddenCurrentItemTemplate'>" +
-          "                  <input hidden='hidden' type='radio' value='{{ refName }}' checked='checked' name=''" +
-          "                    id='' />" +
-          "                </template>" +
-
-          "                <div data-target='ref-selector.listContainer' role='menu' class='SelectMenu-list'" +
-          "                  style='max-height: 330px'>" +
-          "                  <div class='SelectMenu-loading pt-3 pb-0 overflow-hidden' aria-label='Menu is loading'>" +
-          "                    <svg style='box-sizing: content-box; color: var(--color-icon-primary);' width='32'" +
-          "                      height='32' viewBox='0 0 16 16' fill='none' data-view-component='true'" +
-          "                      class='anim-rotate'>" +
-          "                      <circle cx='8' cy='8' r='7' stroke='currentColor' stroke-opacity='0.25'" +
-          "                        stroke-width='2' vector-effect='non-scaling-stroke' />" +
-          "                      <path d='M15 8a7.002 7.002 0 00-7-7' stroke='currentColor' stroke-width='2'" +
-          "                        stroke-linecap='round' vector-effect='non-scaling-stroke' />" +
-          "                    </svg>" +
-          "                  </div>" +
-          "                </div>" +
-          "                <footer class='SelectMenu-footer'><a href='/krapas170/Java-Memory/tags'>View all tags</a>" +
-          "                </footer>" +
-          "              </ref-selector>" +
-          "            </div>" +
-          "          </details-menu>" +
-          "        </details>" +
-          "      </div> " +
-          "            </div>";
+          "</div >";
       }
       document.getElementById("versions").innerHTML = out;
     }
