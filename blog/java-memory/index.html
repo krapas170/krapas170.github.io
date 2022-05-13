@@ -150,6 +150,32 @@
       console.log(data);
       //document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
     });
+
+
+    fetch(URL,  init,{method: 'GET', headers:{},  body})
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+      // URL - Url of the resource
+      // Headers - Headers for the request( Content-Type, ...)
+      // Body - Request content
+      // Init - Contains request body and headers and other configurations such as the request method.
+  </script>
+  <script>
+    fetch('https://api.github.com/users/krapas170', {
+      headers: {
+        'Accept': 'application/vnd.github.v3+json'
+      }
+    })
+      .then(response => response.json()) //Converting the response to a JSON object
+      .then(data => {
+        const root = document.querySelector('#root');
+        root.innerHTML = ` 
+                      <a href=`${ data.html_url } `>Name: `${ data.name } `</a>
+                     <p>Followers : `${ data / followers } `</p>
+                  `
+      })
+      .catch(error => console.error(error));
   </script>
 </body>
 
