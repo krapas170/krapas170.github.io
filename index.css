@@ -547,21 +547,18 @@ body {
 ::-webkit-scrollbar-thumb {
   background: var(--text-color);
 }
+
 :root {
   --bg-color: rgb(10, 10, 10);
   --text-color: #fff;
   --blog-gray-color: rgb(180, 180, 180);
-  --background-image: linear-gradient(
-      90deg,
+  --background-image: linear-gradient(90deg,
       rgba(10, 10, 10, 0.3),
-      rgb(10, 10, 10, 1)
-    ),
+      rgb(10, 10, 10, 1)),
     url("https://krapas170.github.io/background.jfif");
-  --background-background: linear-gradient(
-      0deg,
+  --background-background: linear-gradient(0deg,
       rgba(10, 10, 10, 1),
-      rgba(10, 10, 10, 0.6)
-    ),
+      rgba(10, 10, 10, 0.6)),
     url("https://krapas170.github.io/background.jfif") center center fixed;
   --height: 50vh;
 }
@@ -588,11 +585,23 @@ body {
 
 @media (max-width: 800px) {
   :root {
-    --background-image: linear-gradient(
-        0deg,
+    --background-image: linear-gradient(0deg,
         rgba(10, 10, 10, 1),
-        rgba(10, 10, 10, 0)
-      ),
+        rgba(10, 10, 10, 0)),
       url("https://krapas170.github.io/background.jfif") !important;
   }
+}
+
+.box {
+  background-color: var(--color-canvas-default);
+  border-color: var(--color-border-default);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-fg-default);
+  background-color: var(--color-canvas-default);
 }
