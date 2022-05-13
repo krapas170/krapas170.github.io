@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Beater Bot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/index.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+  <div id="loading">
+  </div>
+  <span onclick="transitionToPage('/')" class="go_back"><em class="fas fa-arrow-left"></em></span>
+  <div id="background_overlay"></div>
+  <div id="background"></div>
+  <table id="profile_blog">
+    <tbody>
+      <tr>
+        <td style="width:8vw;">
+          <div id="profile_img_blog"></div>
+        </td>
+        <td style="width:52vw;">
+          <div id="username_blog"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div id="blog-display">
+    <h1 id="blog_title">Beater Bot</h1>
+    <h2 id="blog_sub_title">
+      Klassisches Kartenspiel Memorie, das mit Java für die Schule programmiert wurde
+    </h2>
+    <div id="blog">
+      <img src="https://images.unsplash.com/photo-1553748024-d1b27fb3f960?w=1450" alt="" />
+      <p>
+        In der Schule hatten wir damit angefangen, ein sehr bekanntes Spiel zu programmieren. Nur leider haben wir es
+        nicht komplett fertig programmiert, daher dachte ich mir: Wieso das Spiel nicht fertig machen?
+        <br>
+
+        <strong>Gesagt, getan!</strong>
+        <br>
+
+        Nun ist das Spiel endlich fertig und man kann es direkt über meine Webseite herunterladen. Klickt dazu einfach
+        unten auf <strong>Herunterladen</strong> und installiert es.
+      </p>
+      <p>
+        Solltet ihr Probleme beim Installieren oder Starten des Spiels haben, fühlt euch so frei und meldet euch bei
+        mir.
+        Ihr habt einen Fehler entdeckt oder einen Vorschlag für das Spiel? Dann meldet es ganz einfach <a
+          href="https://github.com/krapas170/Java-Memory/issues" target="_blank">hier</a>. Das hilft mir, das Spiel zu
+        verbessern.
+      </p>
+      <img src="https://images.unsplash.com/photo-1556814278-8906c7d3a05f?w=1050" alt="" />
+      <p id="currentVersion">
+        <script type="text/javascript">
+          var rawbase = 'https://raw.githubusercontent.com/';
+          var jsonloc = 'krapas170/Java-Memory/main/version.json';
+          $.getJSON(rawbase + jsonloc, function (data) {
+            console.log(data);
+            document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
+          });
+        </script>
+      </p>
+    </div>
+  </div>
+  <div id="footer_blog">
+    &copy;
+    <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span>
+    Pascal Kray
+</div>
+  <script type="text/javascript">
+    setTimeout(function () {
+      document.getElementById("loading").classList.add("animated");
+      document.getElementById("loading").classList.add("fadeOut");
+      setTimeout(function () {
+        document.getElementById("loading").classList.remove("animated");
+        document.getElementById("loading").classList.remove("fadeOut");
+        document.getElementById("loading").style.display = "none";
+      }, 800);
+    }, 700);
+    $.getJSON("../../config.json", function (user) {
+      var icon = document.createElement("link");
+      icon.setAttribute("rel", "icon");
+      icon.setAttribute("href", user[0].userimg);
+      icon.setAttribute("type", "image/png");
+      document.getElementsByTagName("head")[0].appendChild(icon);
+      document.getElementById(
+        "profile_img_blog"
+      ).style.background = `url('${user[0].userimg}') center center`;
+      document.getElementById(
+        "username_blog"
+      ).innerHTML = `<span style="display:${user[0].name == null || !user[0].name ? "none" : "block"
+      };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+      if ((user[0].theme = "dark.css")) {
+        document.querySelector("#background_overlay").style.background =
+          "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+      } else {
+        document.querySelector("#background_overlay").style.background =
+          "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+      }
+    });
+
+    window.transitionToPage = function (href) {
+      document.querySelector('body').style.opacity = 0
+      setTimeout(function () {
+        window.location.href = href
+      }, 500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function (event) {
+      document.querySelector('body').style.opacity = 1
+    })
+  </script>
+</body>
+
+</html>
