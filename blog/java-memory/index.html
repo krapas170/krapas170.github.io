@@ -70,8 +70,8 @@
         </script>
       </p>
     </div>
+    <div id="versions"></div>
   </div>
-  <div id="id01"></div>
   <div id="footer_blog">
     &copy;
     <span id="copyright">
@@ -111,28 +111,18 @@
           "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
       }
     });
-
     window.transitionToPage = function (href) {
       document.querySelector('body').style.opacity = 0
       setTimeout(function () {
         window.location.href = href
       }, 500)
     }
-
     document.addEventListener('DOMContentLoaded', function (event) {
       document.querySelector('body').style.opacity = 1
     })
-
-
-
-
-
-
     var url = "https://api.github.com/repos/krapas170/Java-Memory/releases";
-
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url);
-
     xmlhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         var myArr = JSON.parse(this.responseText);
@@ -150,7 +140,7 @@
         out += '<a href="' + arr[i].html_url + '">' +
           arr[i].name + '</a><br>';
       }
-      document.getElementById("id01").innerHTML = out;
+      document.getElementById("versions").innerHTML = out;
     }
   </script>
 
