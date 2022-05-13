@@ -143,8 +143,8 @@
     console.log("start Octokit")
     import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
     const octokit = new Octokit({
-      username: 'krapas170',
-      auth: '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'
+      //username: 'krapas170',
+      auth: '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'
     })
     console.log("request with Octokit without console output")
     await octokit.request('GET /repos/{owner}/{repo}/releases', {
@@ -186,6 +186,7 @@
     })
       .then(response => response.json()) //Converting the response to a JSON object
       .then(data => {
+        console.log(data)
         const root = document.querySelector('#root');
         root.innerHTML = ` 
                       <a href=`${ data.html_url } `>Name: `${ data.name } `</a>
