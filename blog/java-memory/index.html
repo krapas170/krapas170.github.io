@@ -62,49 +62,15 @@
       <img src="https://images.unsplash.com/photo-1556814278-8906c7d3a05f?w=1050" />
       <p id="currentVersion">
         <script type="text/javascript">
-          alert("aktuelle Version")
-          readVersion()
-          const myJSON = $.getJSON('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json', function (data) { });
-          var obj = JSON.parse(data);
-          let mainContainer = document.getElementById("currentVersion");
-          alert(obj.version + " vom " + obj.date)
-          currentVersion.innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
-          
-          fetch('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json')
-
-              .then(response => response.json())
-
-              .then(data => {
-
-                console.log(data);
-
-                document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
-
-})
-
-
-
-          function readVersion() {
-            fetch('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json')
-              .then(response => response.json())
-              .then(data => {
-                console.log(data);
-                document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
-              })
-          }
-          
-          
+          alert("aktuelle Version");
           var rawbase = 'https://raw.githubusercontent.com/';
-
-          var jsonloc = 'octocat/octocat.github.io/master/params.json';
-
-$.getJSON(rawbase + jsonloc, function( data ) {
-
-   console.log(data);
-
-  //do what you want with data
-
-});
+          var jsonloc = 'krapas170/Java-Memory/main/version.json';
+          $.getJSON(rawbase + jsonloc, function( data ) {
+            console.log(data);
+            var obj = JSON.parse(data);
+            alert(obj.version + " vom " + obj.date);
+            document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
+          });
 
         </script>
       </p>
