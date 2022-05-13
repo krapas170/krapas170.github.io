@@ -63,6 +63,7 @@
       <p id="currentVersion">
         <script type="text/javascript">
           alert("aktuelle Version")
+          readVersion()
           const myJSON = $.getJSON('https://raw.githubusercontent.com/krapas170/Java-Memory/main/version.json', function (data) { });
           var obj = JSON.parse(data);
           let mainContainer = document.getElementById("currentVersion");
