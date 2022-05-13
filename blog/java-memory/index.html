@@ -2,6 +2,42 @@
 <html lang="de">
 
 <head>
+  <link crossorigin="anonymous" media="all"
+    integrity="sha512-WVoKqJ4y1nLsdNH4RkRT5qrM9+n9RFe1RHSiTnQkBf5TSZkJEc9GpLpTIS7T15EQaUQBJ8BwmKvwFPVqfpTEIQ=="
+    rel="stylesheet" href="https://github.githubassets.com/assets/dark_high_contrast-595a0aa89e32.css" />
+  <link data-color-theme="light" crossorigin="anonymous" media="all"
+    integrity="sha512-IVVa++hW3DBYJnNsmMMiUwt96BJ1mjUpGNDRWeui5BY1iA04E58M5NujgomnZU9R9DB+H99IlE7a+9b5XlO25g=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/light-21555afbe856.css" />
+  <link data-color-theme="dark" crossorigin="anonymous" media="all"
+    integrity="sha512-1KkMNn8M/al/dtzBLupRwkIOgnA9MWkm8oxS+solP87jByEvY/g4BmoxLihRogKcX1obPnf4Yp7dI0ZTWO+ljg=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/dark-d4a90c367f0c.css" />
+  <link data-color-theme="dark_dimmed" crossorigin="anonymous" media="all"
+    integrity="sha512-cZa7DZqvMBwD236uzEunO/G1dvw8/QftyT2UtLWKQFEy0z0eq0R5WPwqVME+3NSZG1YaLJAaIqtU+m0zWf/6SQ=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_dimmed-7196bb0d9aaf.css" />
+  <link data-color-theme="dark_colorblind" crossorigin="anonymous" media="all"
+    integrity="sha512-XpAMBMSRZ6RTXgepS8LjKiOeNK3BilRbv8qEiA/M3m+Q4GoqxtHedOI5BAZRikCzfBL4KWYvVzYZSZ8Gp/UnUg=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_colorblind-5e900c04c491.css" />
+  <link data-color-theme="light_colorblind" crossorigin="anonymous" media="all"
+    integrity="sha512-3HF2HZ4LgEIQm77yOzoeR20CX1n2cUQlcywscqF4s+5iplolajiHV7E5ranBwkX65jN9TNciHEVSYebQ+8xxEw=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/light_colorblind-dc71761d9e0b.css" />
+  <link data-color-theme="light_high_contrast" crossorigin="anonymous" media="all"
+    integrity="sha512-+J8j3T0kbK9/sL3zbkCfPtgYcRD4qQfRbT6xnfOrOTjvz4zhr0M7AXPuE642PpaxGhHs1t77cTtieW9hI2K6Gw=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/light_high_contrast-f89f23dd3d24.css" />
+  <link data-color-theme="light_tritanopia" crossorigin="anonymous" media="all"
+    integrity="sha512-AQeAx5wHQAXNf0DmkvVlHYwA3f6BkxunWTI0GGaRN57GqD+H9tW8RKIKlopLS0qGaC54seFsPc601GDlqIuuHg=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/light_tritanopia-010780c79c07.css" />
+  <link data-color-theme="dark_tritanopia" crossorigin="anonymous" media="all"
+    integrity="sha512-+u5pmgAE0T03d/yI6Ha0NWwz6Pk0W6S6WEfIt8veDVdK8NTjcMbZmQB9XUCkDlrBoAKkABva8HuGJ+SzEpV1Uw=="
+    rel="stylesheet" data-href="https://github.githubassets.com/assets/dark_tritanopia-faee699a0004.css" />
+  <link crossorigin="anonymous" media="all"
+    integrity="sha512-Q79nyJ07nm2BBYSi9+vhJBvpQHuRvgoSSmVyAgdk3ZsHPVlUcstVg+8F1Bs7b+GACbqD9iwyOy3VaVE4eN0jbg=="
+    rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-43bf67c89d3b.css" />
+  <link crossorigin="anonymous" media="all"
+    integrity="sha512-kICLwnfuRXT3ZJudcca1LSBktWt3KPVhxPtWkdSA2LPwJHdBI3rARFSo/Rv/B94F/KVC3eSghCekD21T/4pbtw=="
+    rel="stylesheet" href="https://github.githubassets.com/assets/behaviors-90808bc277ee.css" />
+  <link crossorigin="anonymous" media="all"
+    integrity="sha512-b+o0BRKWHyd+gFVhFHlhj/99KsVmD0DLisx7+Wxwu3sufN9uhK2xgoaYGaNNbZAvOZY+r1s4ddFo482Dw7W/zg=="
+    rel="stylesheet" href="https://github.githubassets.com/assets/github-6fea34051296.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -70,6 +106,7 @@
         </script>
       </p>
     </div>
+    <br><br>
     <div id="versions"></div>
   </div>
   <div id="footer_blog">
@@ -136,9 +173,510 @@
     function myFunction(arr) {
       var out = "";
       var i;
-      for (i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].html_url + '">' +
-          arr[i].name + '</a><br>';
+      for (i = 0; i < arr.length; i++) { //out += 'arr[i].keyofjson'
+        out +=
+          "<div class='col-md-9' data-test-selector='release-card'>" +
+          "<div data-view-component='true' class='Box'>" +
+
+          "<div data-view-component='true' class='Box-body'>" +
+          "<div class='float-right d-none d-md-block'>" +
+          "<div class='d-flex flex-items-center ml-md-5 mt-md-3'>" +
+          "<a aria-label='Edit' href='/krapas170/Java-Memory/releases/edit/1.3' data-view-component='true'" +
+          "class='btn-octicon Box-btn-octicon'><svg aria-hidden='true' height='16' viewBox='0 0 16 16'" +
+          "version='1.1' width='16' data-view-component='true' class='octicon octicon-pencil'>" +
+          "<path fill-rule='evenodd'" +
+          "d='M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z'>" +
+          "</path>" +
+          "</svg></a>" +
+          "<details class='details-reset details-overlay details-overlay-dark '>" +
+          "                        <summary aria-label='Delete release' data-view-component='true'" +
+          "                            class='btn-octicon btn-octicon-danger ml-2'><svg aria-hidden='true' height='16'" +
+          "                                viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                class='octicon octicon-trash'>" +
+          "                                <path fill-rule='evenodd'" +
+          "                                    d='M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z'>" +
+          "                                </path>" +
+          "                            </svg></summary>" +
+
+          "                        <details-dialog class='Box d-flex flex-column anim-fade-in fast Box--overlay '" +
+          "                            aria-label='Are you sure?' src=''>" +
+          "                            <div class='Box-header'>" +
+          "                                <button class='Box-btn-octicon btn-octicon float-right' type='button'" +
+          "                                    aria-label='Close dialog' data-close-dialog>" +
+          "                                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "                                        data-view-component='true' class='octicon octicon-x'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                </button>" +
+          "                                <h1 class='Box-title'>Are you sure?</h1>" +
+          "                            </div>" +
+          "                            <div class='Box-body overflow-auto'>" +
+          "                                <div data-view-component='true' class='flash flash-error flash-full'>" +
+          "                                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "                                        data-view-component='true' class='octicon octicon-alert'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+
+          "                                    This will delete the information for the release Java-Memory-v1.3." +
+
+
+
+          "                                </div>" +
+          "                                <form data-turbo='false' action='/krapas170/Java-Memory/releases/tag/1.3'" +
+          "                                    accept-charset='UTF-8' method='post'><input type='hidden' name='_method'" +
+          "                                        value='delete' autocomplete='off' /><input type='hidden'" +
+          "                                        name='authenticity_token'" +
+          "                                        value='7yIMGkOL4UPSMINs3uNaFRmxj9SzG9WO0yIkQbSOvK2jFsAgtVDdsrjiisSfMWAgjwzBjexzFwQAPx9BuzQkiQ'" +
+          "                                        autocomplete='off' />" +
+          "                                    <input type='hidden' name='expected_commit_oid' id='expected_commit_oid'" +
+          "                                        value='2de6a35328b60d5ba978f53a5873f1510036b79b' autocomplete='off' />" +
+          "                                    <button type='submit' data-view-component='true'" +
+          "                                        class='btn-danger btn btn-block mt-3'> Delete this release" +
+
+          "                                    </button>" +
+          "                                </form>" +
+          "                            </div>" +
+          "                        </details-dialog>" +
+          "                    </details>" +
+
+          "                </div>" +
+
+          "            </div>" +
+
+          "            <div class='d-flex flex-row mb-3'>" +
+          "                <div class='flex-1' data-pjax='#repo-content-pjax-container'>" +
+          "                    <h1 data-view-component='true' class='d-inline mr-3'><a" +
+          "                            href='/krapas170/Java-Memory/releases/tag/1.3' data-view-component='true'" +
+          "                            class='Link--primary'>Java-Memory-v1.3</a>" +
+          "                    </h1>" +
+          "                    <a href='/krapas170/Java-Memory/releases/latest' data-view-component='true'" +
+          "                        class='v-align-text-bottom d-none d-md-inline-block'><span data-view-component='true'" +
+          "                            class='Label Label--success Label--large'>Latest</span></a>" +
+
+          "                    <div class='v-align-text-bottom ml-2 d-none d-md-inline'>" +
+
+          "                    </div>" +
+          "                </div>" +
+
+          "                <div class='mt-3 d-md-none'>" +
+          "                    <a href='/krapas170/Java-Memory/releases/latest' data-view-component='true'" +
+          "                        class='v-align-text-bottom'><span data-view-component='true'" +
+          "                            class='Label Label--success Label--large'>Latest</span></a>" +
+
+          "                </div>" +
+          "                <div class='ml-2 mt-3 d-md-none'>" +
+
+          "                </div>" +
+          "            </div>" +
+
+
+          "            <div class='d-md-none border-bottom mb-4 pb-4'>" +
+          "                <div class='d-flex flex-items-center ml-md-5 mt-md-3'>" +
+          "                    <a aria-label='Edit' href='/krapas170/Java-Memory/releases/edit/1.3' data-view-component='true'" +
+          "                        class='btn-octicon Box-btn-octicon'><svg aria-hidden='true' height='16' viewBox='0 0 16 16'" +
+          "                            version='1.1' width='16' data-view-component='true' class='octicon octicon-pencil'>" +
+          "                            <path fill-rule='evenodd'" +
+          "                                d='M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z'>" +
+          "                            </path>" +
+          "                        </svg></a>" +
+          "                    <details class='details-reset details-overlay details-overlay-dark '>" +
+          "                        <summary aria-label='Delete release' data-view-component='true'" +
+          "                            class='btn-octicon btn-octicon-danger ml-2'><svg aria-hidden='true' height='16'" +
+          "                                viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                class='octicon octicon-trash'>" +
+          "                                <path fill-rule='evenodd'" +
+          "                                    d='M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z'>" +
+          "                                </path>" +
+          "                            </svg></summary>" +
+
+          "                        <details-dialog class='Box d-flex flex-column anim-fade-in fast Box--overlay '" +
+          "                            aria-label='Are you sure?' src=''>" +
+          "                            <div class='Box-header'>" +
+          "                                <button class='Box-btn-octicon btn-octicon float-right' type='button'" +
+          "                                    aria-label='Close dialog' data-close-dialog>" +
+          "                                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "                                        data-view-component='true' class='octicon octicon-x'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                </button>" +
+          "                                <h1 class='Box-title'>Are you sure?</h1>" +
+          "                            </div>" +
+          "                            <div class='Box-body overflow-auto'>" +
+          "                                <div data-view-component='true' class='flash flash-error flash-full'>" +
+          "                                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "                                        data-view-component='true' class='octicon octicon-alert'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+
+          "                                    This will delete the information for the release Java-Memory-v1.3." +
+
+
+
+          "                                </div>" +
+          "                                <form data-turbo='false' action='/krapas170/Java-Memory/releases/tag/1.3'" +
+          "                                    accept-charset='UTF-8' method='post'><input type='hidden' name='_method'" +
+          "                                        value='delete' autocomplete='off' /><input type='hidden'" +
+          "                                        name='authenticity_token'" +
+          "                                        value='7yIMGkOL4UPSMINs3uNaFRmxj9SzG9WO0yIkQbSOvK2jFsAgtVDdsrjiisSfMWAgjwzBjexzFwQAPx9BuzQkiQ'" +
+          "                                        autocomplete='off' />" +
+          "                                    <input type='hidden' name='expected_commit_oid' id='expected_commit_oid'" +
+          "                                        value='2de6a35328b60d5ba978f53a5873f1510036b79b' autocomplete='off' />" +
+          "                                    <button type='submit' data-view-component='true'" +
+          "                                        class='btn-danger btn btn-block mt-3'> Delete this release" +
+
+          "                                    </button>" +
+          "                                </form>" +
+          "                            </div>" +
+          "                        </details-dialog>" +
+          "                    </details>" +
+
+          "                </div>" +
+
+          "            </div>" +
+          "            <div data-pjax='true' data-test-selector='body-content' data-view-component='true'" +
+          "                class='markdown-body my-3'>" +
+          "                <p>Das Spiel ist nun auch unter Java 8 ausführbar.</p>" +
+          "                <p><strong>Full Changelog</strong>: <a class='commit-link'" +
+          "                        href='https://github.com/krapas170/Java-Memory/compare/1.2...1.3'><tt>1.2...1.3</tt></a></p>" +
+          "            </div>" +
+          "        </div>" +
+          "        <div data-view-component='true' class='Box-footer'>" +
+          "            <div class='mb-3'>" +
+          "                <details open='open' data-view-component='true'>" +
+          "                    <summary role='button' data-view-component='true'>" +
+          "                        <h3 class='d-inline'>Assets</h3>" +
+          "                        <span title='4' data-view-component='true' class='Counter ml-1'>4</span>" +
+          "                    </summary>" +
+          "                    <div data-view-component='true'>" +
+          "                        <div data-view-component='true' class='Box Box--condensed mt-3'>" +
+
+
+          "                            <ul>" +
+          "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
+          "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                        class='octicon octicon-package color-fg-muted'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                    <a href='/krapas170/Java-Memory/releases/download/1.3/java-memory-installer.exe'" +
+          "                                        rel='nofollow' data-skip-pjax>" +
+          "                                        <span class='px-1 text-bold'>java-memory-installer.exe</span>" +
+
+          "                                    </a>" +
+          "                                    <span class='float-right color-fg-muted' data-test-selector='asset-size-label'>3.56" +
+          "                                        MB</span>" +
+          "                                </li>" +
+          "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
+          "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                        class='octicon octicon-package color-fg-muted'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                    <a href='/krapas170/Java-Memory/releases/download/1.3/Java-Memory-v1.3.zip'" +
+          "                                        rel='nofollow' data-skip-pjax>" +
+          "                                        <span class='px-1 text-bold'>Java-Memory-v1.3.zip</span>" +
+
+          "                                    </a>" +
+          "                                    <span class='float-right color-fg-muted' data-test-selector='asset-size-label'>1.95" +
+          "                                        MB</span>" +
+          "                                </li>" +
+          "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
+          "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                        class='octicon octicon-file-zip color-fg-muted'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M3.5 1.75a.25.25 0 01.25-.25h3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h2.086a.25.25 0 01.177.073l2.914 2.914a.25.25 0 01.073.177v8.586a.25.25 0 01-.25.25h-.5a.75.75 0 000 1.5h.5A1.75 1.75 0 0014 13.25V4.664c0-.464-.184-.909-.513-1.237L10.573.513A1.75 1.75 0 009.336 0H3.75A1.75 1.75 0 002 1.75v11.5c0 .649.353 1.214.874 1.515a.75.75 0 10.752-1.298.25.25 0 01-.126-.217V1.75zM8.75 3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM6 5.25a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 016 5.25zm2 1.5A.75.75 0 018.75 6h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 6.75zm-1.25.75a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM8 9.75A.75.75 0 018.75 9h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 9.75zm-.75.75a1.75 1.75 0 00-1.75 1.75v3c0 .414.336.75.75.75h2.5a.75.75 0 00.75-.75v-3a1.75 1.75 0 00-1.75-1.75h-.5zM7 12.25a.25.25 0 01.25-.25h.5a.25.25 0 01.25.25v2.25H7v-2.25z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                    <a href='/krapas170/Java-Memory/archive/refs/tags/1.3.zip' rel='nofollow'" +
+          "                                        data-skip-pjax>" +
+          "                                        <span class='px-1 text-bold'>Source code</span>" +
+          "                                        (zip)" +
+          "                                    </a>" +
+          "                                </li>" +
+          "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
+          "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                                        class='octicon octicon-file-zip color-fg-muted'>" +
+          "                                        <path fill-rule='evenodd'" +
+          "                                            d='M3.5 1.75a.25.25 0 01.25-.25h3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h2.086a.25.25 0 01.177.073l2.914 2.914a.25.25 0 01.073.177v8.586a.25.25 0 01-.25.25h-.5a.75.75 0 000 1.5h.5A1.75 1.75 0 0014 13.25V4.664c0-.464-.184-.909-.513-1.237L10.573.513A1.75 1.75 0 009.336 0H3.75A1.75 1.75 0 002 1.75v11.5c0 .649.353 1.214.874 1.515a.75.75 0 10.752-1.298.25.25 0 01-.126-.217V1.75zM8.75 3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM6 5.25a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 016 5.25zm2 1.5A.75.75 0 018.75 6h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 6.75zm-1.25.75a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM8 9.75A.75.75 0 018.75 9h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 9.75zm-.75.75a1.75 1.75 0 00-1.75 1.75v3c0 .414.336.75.75.75h2.5a.75.75 0 00.75-.75v-3a1.75 1.75 0 00-1.75-1.75h-.5zM7 12.25a.25.25 0 01.25-.25h.5a.25.25 0 01.25.25v2.25H7v-2.25z'>" +
+          "                                        </path>" +
+          "                                    </svg>" +
+          "                                    <a href='/krapas170/Java-Memory/archive/refs/tags/1.3.tar.gz' rel='nofollow'" +
+          "                                        data-skip-pjax>" +
+          "                                        <span class='px-1 text-bold'>Source code</span>" +
+          "                                        (tar.gz)" +
+          "                                    </a>" +
+          "                                </li>" +
+          "                            </ul>" +
+
+          "                        </div>" +
+          "                    </div>" +
+          "                </details>" +
+          "            </div>" +
+
+
+          "<div class='d-flex flex-row flex-wrap flex-justify-between js-comment'>" +
+          "    <div data-view-component='true'" +
+          "      class='comment-reactions js-reactions-container js-reaction-buttons-container social-reactions reactions-container flex-row-reverse flex-justify-end d-flex'>" +
+          "      <div data-view-component='true' class='color-fg-muted mt-1'></div>" +
+          "      <form class='js-pick-reaction' data-turbo='false' action='/krapas170/Java-Memory/reactions'" +
+          "        accept-charset='UTF-8' method='post'><input type='hidden' name='_method' value='put'" +
+          "          autocomplete='off' /><input type='hidden' name='authenticity_token'" +
+          "            value='VZzephR11u364J9wo-xkmBGjkVsxyORWy_gMzbaXuQMPiCIuENqo4CogoFfQ0m5BPhUeMVf-lh-FH70EaY91lg'" +
+          "            autocomplete='off' />" +
+          "        <input type='hidden' name='input[subjectId]' value='RE_kwDOG1z8Xc4D9EbU'>" +
+          "          <div class='comment-reactions-options js-comment-reactions-options d-flex'>" +
+          "          </div>" +
+          "      </form>" +
+          "      <details" +
+          "        class='dropdown details-reset details-overlay d-inline-block new-reactions-dropdown reactions-menu js-reaction-popover-container js-comment-header-reaction-button'>" +
+          "        <summary aria-label='Add or remove reactions' aria-haspopup='true' data-view-component='true'" +
+          "          class='circle reaction-dropdown-button reaction-dropdown-button--inline btn-invisible btn p-0 mr-1 d-flex flex-justify-center flex-items-center color-bg-subtle border color-border-muted'>" +
+          "          <svg height='18' aria-hidden='true' viewBox='0 0 16 16' version='1.1' width='18'" +
+          "            data-view-component='true' class='octicon octicon-smiley social-button-emoji'>" +
+          "            <path fill-rule='evenodd'" +
+          "              d='M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM5 8a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zM5.32 9.636a.75.75 0 011.038.175l.007.009c.103.118.22.222.35.31.264.178.683.37 1.285.37.602 0 1.02-.192 1.285-.371.13-.088.247-.192.35-.31l.007-.008a.75.75 0 111.222.87l-.614-.431c.614.43.614.431.613.431v.001l-.001.002-.002.003-.005.007-.014.019a1.984 1.984 0 01-.184.213c-.16.166-.338.316-.53.445-.63.418-1.37.638-2.127.629-.946 0-1.652-.308-2.126-.63a3.32 3.32 0 01-.715-.657l-.014-.02-.005-.006-.002-.003v-.002h-.001l.613-.432-.614.43a.75.75 0 01.183-1.044h.001z'>" +
+          "            </path>" +
+          "          </svg>" +
+
+          "        </summary>" +
+          "        <form class='js-pick-reaction' data-turbo='false' action='/krapas170/Java-Memory/reactions'" +
+          "          accept-charset='UTF-8' method='post'><input type='hidden' name='_method' value='put'" +
+          "            autocomplete='off' /><input type='hidden' name='authenticity_token'" +
+          "              value='5JXrhS2u07anLTbED4T9Kajh3aYlMpObU7VRbBJtLTm-gRcNKQGtu3ftCeN8uvfwh1dSzEME4dIdUuClzXXhrA'" +
+          "              autocomplete='off' />" +
+          "          <input type='hidden' name='input[subjectId]' value='RE_kwDOG1z8Xc4D9EbU'>" +
+          "            <ul class='dropdown-menu mt-2 d-flex mb-2 anim-scale-in dropdown-menu-reactions dropdown-menu-ne'" +
+          "              role='menu'>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-dbc47c'" +
+          "                  value='THUMBS_UP react' aria-pressed='false' aria-label='thumbs up'" +
+          "                  data-reaction-label='+1' data-reaction-content='+1' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='+1'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/1f44d.png'" +
+          "                    class='d-flex'>👍</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-f12c04'" +
+          "                  value='LAUGH react' aria-pressed='false' aria-label='laugh'" +
+          "                  data-reaction-label='Laugh' data-reaction-content='smile' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='smile'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/1f604.png'" +
+          "                    class='d-flex'>😄</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-3cd584'" +
+          "                  value='HOORAY react' aria-pressed='false' aria-label='hooray'" +
+          "                  data-reaction-label='Hooray' data-reaction-content='tada' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='tada'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/1f389.png'" +
+          "                    class='d-flex'>🎉</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-1328d0'" +
+          "                  value='HEART react' aria-pressed='false' aria-label='heart'" +
+          "                  data-reaction-label='Heart' data-reaction-content='heart' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='heart'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/2764.png'" +
+          "                    class='d-flex'>❤️</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-9dfdac'" +
+          "                  value='ROCKET react' aria-pressed='false' aria-label='rocket'" +
+          "                  data-reaction-label='Rocket' data-reaction-content='rocket' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='rocket'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/1f680.png'" +
+          "                    class='d-flex'>🚀</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "              <li role='presentation'>" +
+          "                <button name='input[content]' id='reactions--reaction_button_component-8a74a1'" +
+          "                  value='EYES react' aria-pressed='false' aria-label='eyes'" +
+          "                  data-reaction-label='Eyes' data-reaction-content='eyes' type='submit'" +
+          "                  data-view-component='true'" +
+          "                  class='dropdown-item dropdown-item-reaction rounded-2 btn-invisible btn d-flex no-underline color-fg-muted flex-justify-center flex-items-center'>" +
+          "                  <g-emoji alias='eyes'" +
+          "                    fallback-src='https://github.githubassets.com/images/icons/emoji/unicode/1f440.png'" +
+          "                    class='d-flex'>👀</g-emoji>" +
+
+          "                </button>" +
+          "              </li>" +
+          "            </ul>" +
+          "        </form>" +
+          "      </details>" +
+
+          "    </div>" +
+          "  </div>" +
+          "</div >" +
+          "</div >" +
+          "</div >" +
+
+          "</div >" +
+          "  <div class='d-flex flex-column flex-md-row my-5 flex-justify-center'>" +
+          "    <div class='col-md-2 d-flex flex-md-column flex-row flex-wrap pr-md-6 mb-2 mb-md-0 flex-items-start pt-md-4'>" +
+          "      <div class='mb-2 f4 mr-3 mr-md-0 col-12'>" +
+          "        <relative-time datetime='2022-05-02T12:54:59Z' class='no-wrap'></relative-time>" +
+          "      </div>" +
+
+          "      <div class='mb-md-2 mr-3 mr-md-0'>" +
+          "        <img src='https://avatars.githubusercontent.com/u/57595818?s=40&amp;v=4' alt='@krapas170' size='20'" +
+          "          height='20' width='20' data-view-component='true' class='avatar avatar-small circle' />" +
+          "        <a class='color-fg-muted wb-break-all' data-hovercard-type='user'" +
+          "          data-hovercard-url='/users/krapas170/hovercard' data-octo-click='hovercard-link-click'" +
+          "          data-octo-dimensions='link_type:self' href='/krapas170'>krapas170</a>" +
+          "      </div>" +
+
+          "      <div class='mr-3 mr-md-0 d-flex' data-pjax='#repo-content-pjax-container'>" +
+          "        <a href='/krapas170/Java-Memory/tree/1.2' data-view-component='true' class='Link--muted'>" +
+          "          <div data-view-component='true' class='css-truncate css-truncate-target'>" +
+          "            <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "              data-view-component='true' class='octicon octicon-tag'>" +
+          "              <path fill-rule='evenodd'" +
+          "                d='M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z'>" +
+          "              </path>" +
+          "            </svg>" +
+          "            <span class='ml-1 wb-break-all'>" +
+          "              1.2" +
+          "            </span>" +
+          "          </div>" +
+          "        </a>" +
+
+          "      </div>" +
+          "      <div style='position: relative; top: 1px;' class='mb-md-2 mr-3 mr-md-0'" +
+          "        data-pjax='#repo-content-pjax-container'>" +
+          "        <a data-hovercard-type='commit'" +
+          "          data-hovercard-url='/krapas170/Java-Memory/commit/145f650248d949b0b0d8190cc86915aa4f1badf6/hovercard'" +
+          "          href='/krapas170/Java-Memory/commit/145f650248d949b0b0d8190cc86915aa4f1badf6' data-view-component='true'" +
+          "          class='Link--muted mb-2'>" +
+          "          <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "            data-view-component='true' class='octicon octicon-git-commit'>" +
+          "            <path fill-rule='evenodd'" +
+          "              d='M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z'>" +
+          "            </path>" +
+          "          </svg>" +
+          "          <code class='f5 ml-1 wb-break-all'>145f650</code></a>" +
+
+          "      </div>" +
+          "      <div class='mb-md-2 mr-3 mr-md-0 hide-sm'>" +
+
+          "        <details class='details-reset details-overlay ' id='tag-select-menu-4e9ce6de-d301-11ec-96dd-edf2517cd32d'>" +
+          "          <summary data-view-component='true' class='btn-sm btn text-left'> <i></i><span" +
+          "            data-menu-button=''>Compare</span><svg aria-hidden='true' height='16' viewBox='0 0 16 16'" +
+          "              version='1.1' width='16' data-view-component='true'" +
+          "              class='octicon octicon-triangle-down ml-2 mr-n1'>" +
+          "              <path" +
+          "                d='M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z'>" +
+          "              </path>" +
+          "            </svg>" +
+
+          "          </summary>" +
+
+          "          <details-menu class='SelectMenu text-md-left '>" +
+          "            <div class='SelectMenu-modal'>" +
+          "              <header class='SelectMenu-header'>" +
+          "                <span class='SelectMenu-title'>Choose a tag to compare</span>" +
+          "                <button class='SelectMenu-closeButton' type='button'" +
+          "                  data-toggle-for='tag-select-menu-4e9ce6de-d301-11ec-96dd-edf2517cd32d'>" +
+          "                  <svg aria-label='Close menu' aria-hidden='false' role='img' height='16'" +
+          "                    viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
+          "                    class='octicon octicon-x'>" +
+          "                    <path fill-rule='evenodd'" +
+          "                      d='M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z'>" +
+          "                    </path>" +
+          "                  </svg>" +
+          "                </button>" +
+          "              </header>" +
+
+          "              <div class='SelectMenu-filter'>" +
+          "                <input aria-label='Find a tag' autofocus class='SelectMenu-input form-control'" +
+          "                  data-ref-filter placeholder='Find a tag' type='text'>" +
+          "              </div>" +
+
+          "              <ref-selector type='tag' query-endpoint='/krapas170/Java-Memory/refs'" +
+          "                cache-key='v0:1652443888.949455' current-committish='MS4y' default-branch='bWFpbg=='" +
+          "                name-with-owner='a3JhcGFzMTcwL0phdmEtTWVtb3J5' prefetch-on-mouseover>" +
+          "                <template data-target='ref-selector.fetchFailedTemplate'>" +
+          "                  <div class='SelectMenu-message' data-index='{{ index }}'>Could not load tags</div>" +
+          "                </template>" +
+
+          "                <template data-target='ref-selector.noMatchTemplate'>" +
+          "                  <div class='SelectMenu-message' data-index='{{ index }}'>Nothing to show</div>" +
+          "                </template>" +
+
+          "                <template data-target='ref-selector.itemTemplate'>" +
+          "                  <a href='/krapas170/Java-Memory/compare/{{ urlEncodedRefName }}...1.2'" +
+          "                    class='SelectMenu-item' role='menuitemradio' rel='nofollow'" +
+          "                    aria-checked='{{ isCurrent }}' data-index='{{ index }}'>" +
+          "                    <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16'" +
+          "                      data-view-component='true'" +
+          "                      class='octicon octicon-check SelectMenu-icon SelectMenu-icon--check'>" +
+          "                      <path fill-rule='evenodd'" +
+          "                        d='M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z'>" +
+          "                      </path>" +
+          "                    </svg>" +
+          "                    <span class='flex-1 css-truncate css-truncate-overflow {{ isFilteringClass }}'>{{" +
+          "                      refName" +
+          "                    }}</span>" +
+          "                    <span hidden='{{ isNotDefault }}'" +
+          "                      class='Label Label--secondary flex-self-start'>default</span>" +
+          "                  </a>" +
+          "                </template>" +
+
+
+          "                <template data-target='ref-selector.hiddenCurrentItemTemplate'>" +
+          "                  <input hidden='hidden' type='radio' value='{{ refName }}' checked='checked' name=''" +
+          "                    id='' />" +
+          "                </template>" +
+
+          "                <div data-target='ref-selector.listContainer' role='menu' class='SelectMenu-list'" +
+          "                  style='max-height: 330px'>" +
+          "                  <div class='SelectMenu-loading pt-3 pb-0 overflow-hidden' aria-label='Menu is loading'>" +
+          "                    <svg style='box-sizing: content-box; color: var(--color-icon-primary);' width='32'" +
+          "                      height='32' viewBox='0 0 16 16' fill='none' data-view-component='true'" +
+          "                      class='anim-rotate'>" +
+          "                      <circle cx='8' cy='8' r='7' stroke='currentColor' stroke-opacity='0.25'" +
+          "                        stroke-width='2' vector-effect='non-scaling-stroke' />" +
+          "                      <path d='M15 8a7.002 7.002 0 00-7-7' stroke='currentColor' stroke-width='2'" +
+          "                        stroke-linecap='round' vector-effect='non-scaling-stroke' />" +
+          "                    </svg>" +
+          "                  </div>" +
+          "                </div>" +
+          "                <footer class='SelectMenu-footer'><a href='/krapas170/Java-Memory/tags'>View all tags</a>" +
+          "                </footer>" +
+          "              </ref-selector>" +
+          "            </div>" +
+          "          </details-menu>" +
+          "        </details>" +
+          "      </div> " +
+          "            </div>";
       }
       document.getElementById("versions").innerHTML = out;
     }
