@@ -67,8 +67,8 @@
           var jsonloc = 'krapas170/Java-Memory/main/version.json';
           $.getJSON(rawbase + jsonloc, function(data) {
             console.log(data);
-            alert(data[0].version + " vom " + data[0].date);
-            document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + data[0].version + ' vom ' + data[0].date;
+            alert(${data[0].version} + " vom " + ${data[0].date});
+            document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + ${data[0].version} + ' vom ' + ${data[0].date};
           });
 
         </script>
