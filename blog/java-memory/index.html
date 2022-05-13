@@ -61,12 +61,10 @@
       <img src="https://images.unsplash.com/photo-1556814278-8906c7d3a05f?w=1050" alt=""/>
       <p id="currentVersion">
         <script type="text/javascript">
-          alert("aktuelle Version");
           var rawbase = 'https://raw.githubusercontent.com/';
           var jsonloc = 'krapas170/Java-Memory/main/version.json';
           $.getJSON(rawbase + jsonloc, function(data) {
             console.log(data);
-            alert(data.version + " vom " + data.date);
             document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
           });
         </script>
