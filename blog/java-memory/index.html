@@ -135,6 +135,14 @@
       owner: 'krapas170',
       repo: 'Java-Memory'
     }));
+
+
+    var rawbase = 'https://api.github.com/';
+    var jsonloc = 'repos/krapas170/Java-Memory/releases';
+    $.getJSON(rawbase + jsonloc, function (data) {
+      console.log(data);
+      //document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
+    });
   </script>
 </body>
 
