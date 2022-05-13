@@ -122,6 +122,20 @@
       document.querySelector('body').style.opacity = 1
     })
   </script>
+  <script type="module">
+    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+    const octokit = new Octokit({
+      auth: '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'
+    })
+    await octokit.request('GET /repos/{owner}/{repo}/releases', {
+      owner: 'krapas170',
+      repo: 'Java-Memory'
+    })
+    console.log(octokit.request('GET /repos/{owner}/{repo}/releases', {
+      owner: 'krapas170',
+      repo: 'Java-Memory'
+    }));
+  </script>
 </body>
 
 </html>
