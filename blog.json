@@ -5,19 +5,5 @@
         "sub_title": "Here you can get all information and versions of the classic card game Memorie, which I programmed with Java for school.",
         "top_image": "memory-game-icon.jpeg",
         "visible": true
-    },
-    {
-        "url_title": "beater",
-        "title": "Beater",
-        "sub_title": "Here you can get all information and versions of the classic card game Memorie, which I programmed with Java for school.",
-        "top_image": "memory-game-icon.jpeg",
-        "visible": true
-    },
-    {
-        "url_title": "gameserver-live",
-        "title": "Gameserver Live",
-        "sub_title": "Here you can get all information and versions of the classic card game Memorie, which I programmed with Java for school.",
-        "top_image": "memory-game-icon.jpeg",
-        "visible": true
     }
 ]
