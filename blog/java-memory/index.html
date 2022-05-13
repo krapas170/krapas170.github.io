@@ -71,6 +71,7 @@
       </p>
     </div>
   </div>
+  <div id="id01"></div>
   <div id="footer_blog">
     &copy;
     <span id="copyright">
@@ -121,80 +122,55 @@
     document.addEventListener('DOMContentLoaded', function (event) {
       document.querySelector('body').style.opacity = 1
     })
-  </script>
 
 
 
 
 
 
+    var url = "https://api.github.com/repos/krapas170/Java-Memory/releases";
 
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", url);
 
-
-
-
-
-
-
-
-
-
-  <script type="module">
-    console.log("start Octokit")
-    import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-    const octokit = new Octokit({
-      //username: 'krapas170',
-      auth: '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'
-    })
-    console.log("request with Octokit without console output")
-    await octokit.request('GET /repos/{owner}/{repo}/releases', {
-      owner: 'krapas170',
-      repo: 'Java-Memory'
-    })
-    console.log("request with Octokit with console output")
-    console.log(octokit.request('GET /repos/{owner}/{repo}/releases', {
-      owner: 'krapas170',
-      repo: 'Java-Memory'
-    }));
-
-    console.log("request with getJSON with console output 1")
-    var rawbase = 'https://api.github.com/';
-    console.log("request with getJSON with console output 2")
-    var jsonloc = 'repos/krapas170/Java-Memory/releases';
-    console.log("request with getJSON with console output 3")
-    $.getJSON(rawbase + jsonloc, function (data) {
-      console.log("request with getJSON with console output 4")
-      console.log(data);
-      //document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist <a href="https://github.com/krapas170/Java-Memory/releases/latest">v' + data.version + '</a> vom ' + data.date;
-    });
-
-
-    fetch(URL,  init,{method: 'GET', headers:{},  body})
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.log(error));
-      // URL - Url of the resource
-      // Headers - Headers for the request( Content-Type, ...)
-      // Body - Request content
-      // Init - Contains request body and headers and other configurations such as the request method.
-  </script>
-  <script type="text/javascript">
-    fetch('https://api.github.com/users/krapas170', {
-      headers: {
-        'Accept': 'application/vnd.github.v3+json'
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
       }
-    })
-      .then(response => response.json()) //Converting the response to a JSON object
-      .then(data => {
-        console.log(data)
-        const root = document.querySelector('#root');
-        root.innerHTML = ` 
-                      <a href=`${ data.html_url } `>Name: `${ data.name } `</a>
-                     <p>Followers : `${ data / followers } `</p>
-                  `
-      })
-      .catch(error => console.error(error));
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) {
+      var out = "";
+      var i;
+      for (i = 0; i < arr.length; i++) {
+        out += '<a href="' + arr[i].html_url + '">' +
+          arr[i].name + '</a><br>';
+      }
+      document.getElementById("id01").innerHTML = out;
+    }
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
 </html>
