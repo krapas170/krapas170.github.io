@@ -92,6 +92,19 @@
                 document.getElementById("currentVersion").innerHTML = 'Die aktuellste Version ist v' + obj.version + ' vom ' + obj.date;
               })
           }
+          
+          
+          var rawbase = 'https://raw.githubusercontent.com/';
+
+          var jsonloc = 'octocat/octocat.github.io/master/params.json';
+
+$.getJSON(rawbase + jsonloc, function( data ) {
+
+   console.log(data);
+
+  //do what you want with data
+
+});
 
         </script>
       </p>
