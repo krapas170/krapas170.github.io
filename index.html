@@ -162,7 +162,7 @@
       }
       for (var i = 0; i < blog.length; i++) {
         $("#blogs").append(`
-            <a href="./blog/${blog[i].url_title}/"">
+            <span onclick="transitionToPage('./blog/${blog[i].url_title}/')">
                 <section>
                     <img src="./blog/${blog[i].url_title}/${blog[i].top_image}">
                     <div class="blog_container">
@@ -172,7 +172,7 @@
                         </div>
                     </div>
                 </section>
-            </a>
+            </span>
             `);
       }
     }).fail(function () {
