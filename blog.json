@@ -5,19 +5,5 @@
         "sub_title": "Hier bekommt ihr alle Infos und Versionen zum klassischen Kartenspiel Memorie, das ich mit Java für die Schule programmiert habe.",
         "top_image": "memory-game-icon.jpeg",
         "visible": true
-    },
-    {
-        "url_title": "beater",
-        "title": "Beater Bot",
-        "sub_title": "Hier bekommt ihr alle Infos und Versionen zum klassischen Kartenspiel Memorie, das ich mit Java für die Schule programmiert habe.",
-        "top_image": "memory-game-icon.jpeg",
-        "visible": true
-    },
-    {
-        "url_title": "gameserver-live",
-        "title": "Gameserver Live Bot",
-        "sub_title": "Hier bekommt ihr alle Infos und Versionen zum klassischen Kartenspiel Memorie, das ich mit Java für die Schule programmiert habe.",
-        "top_image": "memory-game-icon.jpeg",
-        "visible": true
     }
 ]
