@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>krapas170</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/57595818?v=4" type="image/png">
+</head>
+
+<body>
+    <h1>404</h1>
+    <div class="cloak__wrapper">
+        <div class="cloak__container">
+            <div class="cloak"></div>
+        </div>
+    </div>
+    <div class="info">
+        <h2>We can't find that page</h2>
+        <p>We're fairly sure that page used to be here, but seems to have gone missing. We do apologise on it's behalf.
+        </p><div id="cursor404"><a onclick="transitionToPage('./')" rel="noreferrer noopener">Home</a></div>
+    </div>
+    <script>
+        window.transitionToPage = function (href) {
+            document.querySelector('body').style.opacity = 0
+            setTimeout(function () {
+                window.location.href = href
+            }, 500)
+        }
+        document.addEventListener('DOMContentLoaded', function (event) {
+            document.querySelector('body').style.opacity = 1
+        })
+    </script>
+</body>
+
+</html>
