@@ -161,6 +161,7 @@
           "none");
       }
       for (var i = 0; i < blog.length; i++) {
+        console.log(blog[i]);
         $("#blogs").append(`
             <span onclick="transitionToPage('./blog/${blog[i].url_title}/')">
                 <section>
