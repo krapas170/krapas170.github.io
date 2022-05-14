@@ -49,9 +49,6 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
     </script>
-  <script>
-    src = "https://cdn.jsdelivr.net/npm/underscore@latest/underscore-umd-min.js"
-  </script>
 </head>
 
 <body>
@@ -172,99 +169,55 @@
     function myFunction(arr) {
       var out = "";
       var i;
-      var asset0 = 0;
-      var asset1 = 0;
-      const asset_0_name = [];
-      const asset_0_url = [];
-      const asset_1_name = [];
-      const asset_1_url = [];
-      const asset_2_name = [];
-      const asset_2_url = [];
-      const asset_3_name = [];
-      const asset_3_url = [];
-      const asset_4_name = [];
-      const asset_4_url = [];
-      const asset_5_name = [];
-      const asset_5_url = [];
-      /*for (i = 0; i < Object.keys(arr).length; i++) {
-        asset_0_url[i] = arr[i].assets[0].browser_download_url;
-        asset_0_name[i] = arr[i].assets[0].name;
-        console.log("Link an Stelle " + i + ": " + asset_0_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_0_name[i]);
 
-        asset_0_url[i] = arr[i].assets[1].browser_download_url;
-        asset_0_name[i] = arr[i].assets[1].name;
-        console.log("Link an Stelle " + i + ": " + asset_1_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_1_name[i]);
+      const html_url = [];
+      const name = [];
+      const assets_name = [];
+      const assets_size = [];
+      const assets_browser_download_url = [];
+      const body = [];
 
-        asset_0_url[i] = arr[i].assets[2].browser_download_url;
-        asset_0_name[i] = arr[i].assets[2].name;
-        console.log("Link an Stelle " + i + ": " + asset_2_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_2_name[i]);
+      for (i = 0; i < Object.keys(arr).length; i++) {
+        html_url[i] = arr[i].html_url;
+        name[i] = arr[i].name;
+        assets_name[i] = arr[i].assets[0].name;
+        assets_size[i] = arr[i].assets[0].size;
+        assets_browser_download_url[i] = arr[i].assets[0].browser_download_url;
+        body[i] = arr[i].body;
 
-        asset_0_url[i] = arr[i].assets[3].browser_download_url;
-        asset_0_name[i] = arr[i].assets[3].name;
-        console.log("Link an Stelle " + i + ": " + asset_3_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_3_name[i]);
-
-        asset_0_url[i] = arr[i].assets[4].browser_download_url;
-        asset_0_name[i] = arr[i].assets[4].name;
-        console.log("Link an Stelle " + i + ": " + asset_4_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_4_name[i]);
-
-        asset_0_url[i] = arr[i].assets[5].browser_download_url;
-        asset_0_name[i] = arr[i].assets[5].name;
-        console.log("Link an Stelle " + i + ": " + asset_5_url[i]);
-        console.log("Name an Stelle " + i + ": " + asset_5_name[i]);
-
-
-
-
-        for (let index = 0; index < arr[i].assets[0].browser_download_url; index++) {
-          asset0++;
-          console.log("asset0: " + asset0)
-        }
-        for (let index = 0; index < arr[i].assets[1].browser_download_url.length; index++) {
-          asset1++;
-          console.log("asset1: " + asset1)
-        }
+        console.log(html_url[i]);
+        console.log(name[i]);
+        console.log(assets_name[i]);
+        console.log(assets_size[i]);
+        console.log(assets_browser_download_url[i]);
+        console.log(body[i]);
       }
-      console.log("Insgesamt sind " + Object.keys(asset_0_name).length + " Daten in 'asset_0_name' gespeichert")
-      console.log("Insgesamt sind " + Object.keys(asset_0_url).length + " Daten in 'asset_0_url' gespeichert")
-      var browser_download_url = {};*/
+      var xyz = 0;
       for (i = 0; i < arr.length; i++) { //out += "arr[i].keyofjson" + arr[i].keyofjson + 
         out +=
           "<div class='col-md-9' data-test-selector='release-card'>" +
-          "<div data-view-component='true' class='Box'>" +
-          "<div data-view-component='true' class='Box-body'>" +
-          "<div class='d-flex flex-row mb-3'>" +
-          "<div class='flex-1' data-pjax='#repo-content-pjax-container'>" +
-          "<h1 data-view-component='true' class='d-inline mr-3'><a" +
-          "href='" + arr[i].html_url + "' data-view-component='true'" +
-          "class='Link--primary'>" + arr[i].name + "</a>" +
-          "</h1>" +
-          "<div class='v-align-text-bottom ml-2 d-none d-md-inline'>" +
-          "                    </div>" +
+          "    <div data-view-component='true' class='Box'>" +
+          "        <div data-view-component='true' class='Box-body'>" +
+          "            <div class='d-flex flex-row mb-3'>" +
+          "                <div class='flex-1' data-pjax='#repo-content-pjax-container'>" +
+          "                    <h1 data-view-component='true' class='d-inline mr-3'><a href='"+html_url[i]+"'" +
+          "                            data-view-component='true' class='Link--primary'>" + name[i] + "</a></h1>" +
+          "                    <div class='v-align-text-bottom ml-2 d-none d-md-inline'></div>" +
           "                </div>" +
-          "                <div class='ml-2 mt-3 d-md-none'>" +
-          "                </div>" +
+          "                <div class='ml-2 mt-3 d-md-none'> </div>" +
           "            </div>" +
           "            <div data-pjax='true' data-test-selector='body-content' data-view-component='true'" +
-          "                class='markdown-body my-3'>" +
-          + arr[i].body +
-          "            </div>" +
+          "                class='markdown-body my-3'>"+body[i]+"</div>" +
           "        </div>" +
           "        <div data-view-component='true' class='Box-footer'>" +
           "            <div class='mb-3'>" +
           "                <details open='open' data-view-component='true'>" +
           "                    <summary role='button' data-view-component='true'>" +
-          "                        <h3 class='d-inline'>Assets</h3>" +
-          "                        <span title='4' data-view-component='true' class='Counter ml-1'>4</span>" +
+          "                        <h3 class='d-inline'>Assets</h3><span title='4' data-view-component='true'" +
+          "                            class='Counter ml-1'>4</span>" +
           "                    </summary>" +
           "                    <div data-view-component='true'>" +
           "                        <div data-view-component='true' class='Box Box--condensed mt-3'>" +
-
-
           "                            <ul>" +
           "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
           "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
@@ -272,40 +225,30 @@
           "                                        <path fill-rule='evenodd'" +
           "                                            d='M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z'>" +
           "                                        </path>" +
-          "                                    </svg>" +
-          "                                    <a href='" + arr[i].assets[0].browser_download_url + "'" +
-          "                                        rel='nofollow' data-skip-pjax>" +
-          "                                        <span class='px-1 text-bold'>" + arr[i].assets[0].name + "</span>" +
-
-          "                                    </a>" +
-          "                                    <span class='float-right color-fg-muted' data-test-selector='asset-size-label'>3.56" +
-          "                                        MB</span>" +
-          "                                </li>"
-        "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
+          "                                    </svg> <a href='"+assets_browser_download_url[xyz]+"' rel='nofollow'" +
+          "                                        data-skip-pjax> <span" +
+          "                                            class='px-1 text-bold'>"+assets_name[xyz]+"</span></a><span" +
+          "                                        class='float-right color-fg-muted'" +
+          "                                        data-test-selector='asset-size-label'>"+(assets_size[xyz]/1048576).toFixed(2)+" MB</span></li>" +
+          "                                <li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16'" +
           "                                        viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true'" +
           "                                        class='octicon octicon-package color-fg-muted'>" +
           "                                        <path fill-rule='evenodd'" +
           "                                            d='M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z'>" +
           "                                        </path>" +
-          "                                    </svg>" +
-          "                                    <a href='" + arr[i].assets[0].browser_download_url + "'" +
-          "                                        rel='nofollow' data-skip-pjax>" +
-          "                                        <span class='px-1 text-bold'>Java-Memory-v1.3.zip</span>" +
-
-          "                                    </a>" +
-          "                                    <span class='float-right color-fg-muted' data-test-selector='asset-size-label'>1.95" +
-          "                                        MB</span>" +
-          "                                </li>" +
+          "                                    </svg> <a href='"+assets_browser_download_url[xyz]+"' rel='nofollow'" +
+          "                                        data-skip-pjax><span" +
+          "                                            class='px-1 text-bold'>"+assets_name[xyz]+"</span></a><span" +
+          "                                        class='float-right color-fg-muted'" +
+          "                                        data-test-selector='asset-size-label'>"+(assets_size[xyz]/1048576).toFixed(2)+" MB</span></li>" +
           "                            </ul>" +
           "                        </div>" +
           "                    </div>" +
           "                </details>" +
           "            </div>" +
-          "</div>" +
-          "</div>" +
-          "</div>" +
-
-          "<div>letzte Zeile</div><br><br>";
+          "        </div>" +
+          "    </div>" +
+          "</div><br><br>";
       }
       document.getElementById("versions").innerHTML = out;
     }
