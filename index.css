@@ -12,7 +12,7 @@ body {
   align-items: center;
   font-family: "Poppins", sans-serif;
   opacity: 1;
-  transition: opacity .5s;
+  transition: opacity .5s; 
 }
 
 #loading {
