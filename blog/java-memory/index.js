@@ -45,6 +45,7 @@ setTimeout(function () {
     if (this.readyState == 4 && this.status == 200) {
       var myArr = JSON.parse(this.responseText);
       showReleases(myArr);
+      console.log(myArr);
     }
   };
 
