@@ -605,3 +605,24 @@ body {
   color: var(--color-fg-default);
   background-color: var(--color-canvas-default);
 }
+
+tt, code, samp {
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  font-size: 12px;
+}
+.markdown-body code, .markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+}
+.commit-link {
+  font-weight: 400;
+  color: var(--color-accent-fg);
+}
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
