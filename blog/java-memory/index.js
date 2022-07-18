@@ -55,15 +55,11 @@ xmlhttp.send();
 function showReleases(arr) {
   var out = "";
 
-  const html_url = [];
-  const name = [];
-  const assets = [];
-  const assets_name = [];
-  const assets_size = [];
-  const assets_browser_download_url = [];
-  const body = [];
-  const number_of_files = [];
-  const number_of_releases = [];
+  let html_url = [];
+  let name = [];
+  let assets = [];
+  let body = [];
+  let number_of_files = [];
 
   for (i = 0; i < Object.keys(arr).length; i++) {
     number_of_files[i] = arr[i].assets.length;
@@ -103,6 +99,30 @@ function showReleases(arr) {
     console.log(name[i]);
     console.log(body[i]);
 
+    console.log(arr[i + 1]);
+
+    let beschreibung;
+    if (arr[i + 1] != undefined) {
+      let tag_name1 = [];
+      tag_name1 = arr[i + 1].tag_name;
+      let tag_name2 = [];
+      tag_name2 = arr[i].tag_name;
+
+      console.log(tag_name1);
+      console.log(tag_name2);
+
+      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "'><tt>" + tag_name1 + "..." + tag_name2 + "</tt></a>");
+
+    } else {
+      let tag_name2 = [];
+      tag_name2 = arr[i].tag_name;
+
+      console.log(tag_name2);
+
+      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/comments/" + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "'>https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "</a>");
+
+    }
+
     out +=
       "<div class='col-md-9' data-test-selector='release-card' data-view-component='true' class='Box'>" +
       "<div data-view-component='true' class='Box-body'>" +
@@ -113,7 +133,7 @@ function showReleases(arr) {
       "</div>" +
       "<div class='ml-2 mt-3 d-md-none'> </div>" +
       "</div>" +
-      "<div data-pjax='true' data-test-selector='body-content' data-view-component='true' class='markdown-body my-3'><p>" + body[i] + "</p></div>" +
+      "<div data-pjax='true' data-test-selector='body-content' data-view-component='true' class='markdown-body my-3'>" + beschreibung + "</div>" +
       "</div>" +
       "<div data-view-component='true' class='Box-footer'>" +
       "<div class='mb-3'>" +
