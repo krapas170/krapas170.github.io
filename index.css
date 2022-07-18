@@ -614,19 +614,18 @@ tt, code, samp {
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
-  background-color: var(--color-neutral-muted);
+  background-color: rgba(158,167,179,0.4);
   border-radius: 6px;
 }
 .commit-link {
   font-weight: 400;
-  color: var(--color-accent-fg);
+  color: #71b7ff;
 }
 a:-webkit-any-link {
-  color: -webkit-link;
   cursor: pointer;
-  text-decoration: underline;
+
 }
 a {
-  color: var(--color-accent-fg);
+  color: #71b7ff;
   text-decoration: none;
 }
