@@ -54,8 +54,7 @@ xmlhttp.send();
 
 function showReleases(arr) {
   var out = "";
-  var i;
-  var z;
+
   const html_url = [];
   const name = [];
   const assets = [];
@@ -65,6 +64,7 @@ function showReleases(arr) {
   const body = [];
   const number_of_files = [];
   const number_of_releases = [];
+
   for (i = 0; i < Object.keys(arr).length; i++) {
     number_of_files[i] = arr[i].assets.length;
     html_url[i] = arr[i].html_url;
@@ -76,44 +76,63 @@ function showReleases(arr) {
       id = assets.length;
       assets.push(files);
     }
-    console.log(number_of_files[i])
+    console.log(number_of_files[i]);
     console.log(html_url[i]);
     console.log(name[i]);
     console.log(body[i]);
-    console.log(assets[i])
-    console.log("Release-Nummer: " + name.length)
+    for (let index = 0; index < number_of_files[i]; index++) {
+      console.log(arr[i].assets[index]);
+    }
+    //console.log(assets[i]);
+    console.log("Release-Nummer: " + name.length);
   }
-  for (z = 0; z < number_of_files[i]; z++) {
+
+  for (i = 0; i < Object.keys(arr).length; i++) {
+    number_of_files[i] = arr[i].assets.length;
+    html_url[i] = arr[i].html_url;
+    name[i] = arr[i].name;
+    body[i] = arr[i].body;
+    for (let index = 0; index < number_of_files[i]; index++) {
+      files = {};
+      files.file = [arr[i].assets[index].name, arr[i].assets[index].size, arr[i].assets[index].browser_download_url];
+      id = assets.length;
+      assets.push(files);
+    }
+    console.log(number_of_files[i]);
+    console.log(html_url[i]);
+    console.log(name[i]);
+    console.log(body[i]);
+
     out +=
       "<div class='col-md-9' data-test-selector='release-card' data-view-component='true' class='Box'>" +
       "<div data-view-component='true' class='Box-body'>" +
       "<div class='d-flex flex-row mb-3'>" +
       "<div class='flex-1' data-pjax='#repo-content-pjax-container'>" +
-      "<h1 data-view-component='true' class='d-inline mr-3'><a href='" + html_url[z] + "' data-view-component='true' class='Link--primary'>" + name[z] + "</a></h1>" +
+      "<h1 data-view-component='true' class='d-inline mr-3'><a href='" + html_url[i] + "' data-view-component='true' class='Link--primary'>" + name[i] + "</a></h1>" +
       "<div class='v-align-text-bottom ml-2 d-none d-md-inline'></div>" +
       "</div>" +
       "<div class='ml-2 mt-3 d-md-none'> </div>" +
       "</div>" +
-      "<div data-pjax='true' data-test-selector='body-content' data-view-component='true' class='markdown-body my-3'>" + body[z] + "</div>" +
+      "<div data-pjax='true' data-test-selector='body-content' data-view-component='true' class='markdown-body my-3'><p>" + body[i] + "</p></div>" +
       "</div>" +
       "<div data-view-component='true' class='Box-footer'>" +
       "<div class='mb-3'>" +
       "<details open='open' data-view-component='true'>" +
       "<summary role='button' data-view-component='true'>" +
-      "<h3 class='d-inline'>Assets</h3><span title='" + number_of_files[z] + "' data-view-component='true' class='Counter ml-1'>4</span>" +
+      "<h3 class='d-inline'>Assets</h3><span title='" + number_of_files[i] + "' data-view-component='true' class='Counter ml-1'>" + number_of_files[i] + "</span>" +
       "</summary>" +
       "<div data-view-component='true'>" +
       "<div data-view-component='true' class='Box Box--condensed mt-3'>" +
       "<ul>";
 
-    console.log("Anzahl an Dateien in dieser Version: " + number_of_files[z]);
-    for (x = 0; x < number_of_files[i]; x++) {
+    for (let index = 0; index < number_of_files[i]; index++) {
+      console.log(arr[i].assets[index]);
       out +=
         "<li data-view-component='true' class='Box-row'> <svg aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-package color-fg-muted'>" +
         "<path fill-rule='evenodd' d='M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z'>" +
         "</path>" +
-        "</svg> <a href='" + assets[i].file[2] + "' rel='nofollow' data-skip-pjax> <span" +
-        "class='px-1 text-bold'>" + assets[i].file[0] + "</span></a><span class='float-right color-fg-muted' data-test-selector='asset-size-label'>" + (assets[i].file[1] / 1048576).toFixed(2) + " MB</span>" +
+        "</svg> <a href='" + arr[i].assets[index].browser_download_url + "' rel='nofollow' data-skip-pjax> <span" +
+        "class='px-1 text-bold'>" + arr[i].assets[index].name + "</span></a><span class='float-right color-fg-muted' data-test-selector='asset-size-label'>" + (arr[i].assets[index].size / 1048576).toFixed(2) + " MB</span>" +
         "</li>"
     }
     out +=
@@ -126,5 +145,6 @@ function showReleases(arr) {
       "</div>" +
       "</div><br><br>";
   }
+  console.log(out);
   document.getElementById("versions").innerHTML = out;
 }
