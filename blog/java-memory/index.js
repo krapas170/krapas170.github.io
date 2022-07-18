@@ -119,7 +119,7 @@ function showReleases(arr) {
 
       console.log(tag_name2);
 
-      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/comments/" + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "'>https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "</a>");
+      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/comments/" + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "' class='commit-link'>https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "</a>");
 
     }
 
