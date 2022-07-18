@@ -626,3 +626,7 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: underline;
 }
+a {
+  color: var(--color-accent-fg);
+  text-decoration: none;
+}
