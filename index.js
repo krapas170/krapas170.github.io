@@ -33,10 +33,10 @@ $.getJSON("blog.json", function (blog) {
   }
 }).fail(function () {
   return (document.getElementById("blog_section").style.display = "none");
-});
+})
 const magicProjectsGrid = new MagicGrid({
   container: "#work_section",
-  animate: false,
+  animate: true,
   gutter: 30, // default gutter size
   static: true,
   useMin: false,
@@ -46,7 +46,7 @@ const magicProjectsGrid = new MagicGrid({
 
 const magicForksGrid = new MagicGrid({
   container: "#forks_section",
-  animate: false,
+  animate: true,
   gutter: 30, // default gutter size
   static: true,
   useMin: false,
