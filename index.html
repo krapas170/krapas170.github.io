@@ -88,6 +88,44 @@
       <h1>Blog</h1>
       <div id="blogs"></div>
     </div>
+    <script>
+      setTimeout(function () {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function () {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("blog.json", function (blog) {
+        blog = blog || [];
+        if (blog.length == 0) {
+          return (document.getElementById("blog_section").style.display =
+            "none");
+        }
+        for (const element of blog) {
+          console.log(element.visible);
+          if (element.visible == true) {
+            $("#blogs").append(`
+        <a href="./blog/${element.url_title}/"" style="display: inline">
+            <section>
+                <img src="./blog/${element.url_title}/${element.top_image}">
+                <div class="blog_container">
+                    <div class="section_title">${element.title}</div>
+                    <div class="about_section">
+                        ${element.sub_title}
+                    </div>
+                </div>
+            </section>
+        </a>
+        `);
+          }
+        }
+      }).fail(function () {
+        return (document.getElementById("blog_section").style.display = "none");
+      })
+    </script>
     <div id="footer_blog">
       &copy;
       <span id="copyright">
