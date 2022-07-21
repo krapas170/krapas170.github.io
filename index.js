@@ -119,7 +119,7 @@ function showWork(arr) {
     number_of_files[i] = arr[i].assets.length;
     html_url[i] = arr[i].html_url;
     name[i] = arr[i].name;
-    body[i] = arr[i].body;a
+    body[i] = arr[i].body; a
     for (let index = 0; index < number_of_files[i]; index++) {
       files = {};
       files.file = [arr[i].assets[index].name, arr[i].assets[index].size, arr[i].assets[index].browser_download_url];
@@ -156,18 +156,19 @@ function showWork(arr) {
     }
 
     out +=
-    '<a href="https://github.com/krapas170/krapas170.github.io" target="_blank">' +
-    '<section>' +
+      '<a href="https://github.com/krapas170/krapas170.github.io" target="_blank">' +
+      '<section>' +
       '<div class="section_title">krapas170.github.io</div>' +
       '<div class="about_section">' +
-        '<span style="display:block;">My personal blog</span>' +
+      '<span style="display:block;">My personal blog</span>' +
       '</div>' +
       '<div class="bottom_section">' +
-        '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>'
-        '<span><i class="fas fa-star"></i>&nbsp; 0</span>'
-        '<span><i class="fas fa-code-branch"></i>&nbsp; 0</span>'
-      '</div>'
+      '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>'
+    '<span><i class="fas fa-star"></i>&nbsp; 0</span>'
+    '<span><i class="fas fa-code-branch"></i>&nbsp; 0</span>'
+    '</div>'
     '</section>'
-  '</a>';
-  document.getElementById("work_section").innerHTML = out;
+    '</a>';
+    document.getElementById("work_section").innerHTML = out;
+  }
 }
