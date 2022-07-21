@@ -124,6 +124,6 @@ function showWork(arr) {
 
   }
 
-  
-    document.getElementById("work_section").innerHTML = out;
+
+  document.getElementById("work_section").innerHTML = out;
 }
