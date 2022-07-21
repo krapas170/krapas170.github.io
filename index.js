@@ -119,7 +119,7 @@ function showWork(arr) {
     number_of_files[i] = arr[i].assets.length;
     html_url[i] = arr[i].html_url;
     name[i] = arr[i].name;
-    body[i] = arr[i].body; a
+    body[i] = arr[i].body;
     for (let index = 0; index < number_of_files[i]; index++) {
       files = {};
       files.file = [arr[i].assets[index].name, arr[i].assets[index].size, arr[i].assets[index].browser_download_url];
