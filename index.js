@@ -66,8 +66,8 @@ window.transitionToPage = function (href) {
 }
 document.addEventListener('DOMContentLoaded', function (event) {
   document.querySelector('body').style.opacity = 1
-})
-var url = "https://api.github.com/users/krapas170/repos";
+});
+var url = "https://api.github.com/users/krapas170/repos?sort=pushed";
 var xmlhttp = new XMLHttpRequest();
 xmlhttp.open("GET", url);
 xmlhttp.onreadystatechange = function () {
@@ -82,9 +82,9 @@ xmlhttp.open("GET", url, true);
 xmlhttp.send();
 
 function showWork(arr) {
+
   var out = "";
 
-  let pushed = [];
   let name = [];
   let language = [];
   let description = [];
@@ -92,8 +92,7 @@ function showWork(arr) {
   let forks = [];
   let stargazers_count = [];
 
-  for (i = 0; i < Object.keys(arr).length; i++) {
-    pushed[i] = arr[i].pushed_at;
+  for (i = 0; i < 4; i++) {
     name[i] = arr[i].name;
     language[i] = arr[i].language;
     description[i] = arr[i].description;
@@ -101,7 +100,6 @@ function showWork(arr) {
     forks = arr[i].forks;
     stargazers_count = arr[i].stargazers_count;
 
-    console.log(pushed[i]);
     console.log(name[i]);
     console.log(language[i]);
     console.log(description[i]);
@@ -109,66 +107,23 @@ function showWork(arr) {
     console.log(forks[i]);
     console.log(stargazers_count[i]);
 
-    for (let index = 0; index < number_of_files[i]; index++) {
-      console.log(arr[i].assets[index]);
-    }
-    console.log("Release-Nummer: " + name.length);
-  }
-
-  for (i = 0; i < Object.keys(arr).length; i++) {
-    number_of_files[i] = arr[i].assets.length;
-    html_url[i] = arr[i].html_url;
-    name[i] = arr[i].name;
-    body[i] = arr[i].body;
-    for (let index = 0; index < number_of_files[i]; index++) {
-      files = {};
-      files.file = [arr[i].assets[index].name, arr[i].assets[index].size, arr[i].assets[index].browser_download_url];
-      id = assets.length;
-      assets.push(files);
-    }
-    console.log(number_of_files[i]);
-    console.log(html_url[i]);
-    console.log(name[i]);
-    console.log(body[i]);
-
-    console.log(arr[i + 1]);
-
-    let beschreibung;
-    if (arr[i + 1] != undefined) {
-      let tag_name1 = [];
-      tag_name1 = arr[i + 1].tag_name;
-      let tag_name2 = [];
-      tag_name2 = arr[i].tag_name;
-
-      console.log(tag_name1);
-      console.log(tag_name2);
-
-      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "'><tt>" + tag_name1 + "..." + tag_name2 + "</tt></a>");
-
-    } else {
-      let tag_name2 = [];
-      tag_name2 = arr[i].tag_name;
-
-      console.log(tag_name2);
-
-      beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "' class='commit-link'>https://github.com/krapas170/Java-Memory/commits/" + tag_name2 + "</a>");
-
-    }
-
     out +=
-      '<a href="https://github.com/krapas170/krapas170.github.io" target="_blank">' +
+      '<a href="' + html_url[i] + '" target="_blank">' +
       '<section>' +
-      '<div class="section_title">krapas170.github.io</div>' +
+      '<div class="section_title">' + name[i] + '</div>' +
       '<div class="about_section">' +
-      '<span style="display:block;">My personal blog</span>' +
+      '<span style="display:block;">' + description[i] + '</span>' +
       '</div>' +
       '<div class="bottom_section">' +
-      '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; HTML</span>'
-    '<span><i class="fas fa-star"></i>&nbsp; 0</span>'
-    '<span><i class="fas fa-code-branch"></i>&nbsp; 0</span>'
-    '</div>'
-    '</section>'
-    '</a>';
-    document.getElementById("work_section").innerHTML = out;
+      '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; ' + language[i] + '</span>' +
+      '<span><i class="fas fa-star"></i>&nbsp; ' + forks[i] + '</span>' +
+      '<span><i class="fas fa-code-branch"></i>&nbsp; ' + stargazers_count[i] + '</span>' +
+      '</div>' +
+      '</section>' +
+      '</a>';
+
   }
+
+  
+    document.getElementById("work_section").innerHTML = out;
 }
