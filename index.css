@@ -290,7 +290,7 @@ body {
 #forks {
   margin: 2vh 0px;
   padding: 4vh 0px !important;
-  columns: 2 !important;
+  columns: 1;
 }
 
 .projects {
@@ -629,5 +629,8 @@ a:-webkit-any-link {
 a {
   color: #71b7ff;
   text-decoration: none;
-  position: relative !important;
+  position: unset !important;
+}
+#forks_section {
+  columns: 2;
 }
