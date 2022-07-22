@@ -290,6 +290,7 @@ body {
 #forks {
   margin: 2vh 0px;
   padding: 4vh 0px !important;
+  columns: 2 !important;
 }
 
 .projects {
@@ -378,7 +379,7 @@ body {
 }
 
 #blogs {
-  columns: 2;
+  columns: 2 !important;
 }
 
 #blog_title {
@@ -477,7 +478,7 @@ body {
   }
 
   #blogs {
-    columns: 1;
+    columns: 1 !important;
   }
 
   #blogs section {
