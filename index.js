@@ -65,11 +65,11 @@ function showWork(arr) {
     stargazers_count = arr[i].stargazers_count;
 
     console.log(name[i]);
-    console.log(language[i]);
+    console.log(arr[i].language);
     console.log(description[i]);
     console.log(html_url[i]);
-    console.log(forks[i]);
-    console.log(stargazers_count[i]);
+    console.log(arr[i].forks);
+    console.log(arr[i].stargazers_count);
 
     out +=
       '<a href="' + html_url[i] + '" target="_blank">' +
@@ -79,9 +79,9 @@ function showWork(arr) {
       '<span style="display:block;">' + description[i] + '</span>' +
       '</div>' +
       '<div class="bottom_section">' +
-      '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; ' + language[i] + '</span>' +
-      '<span><i class="fas fa-star"></i>&nbsp; ' + forks[i] + '</span>' +
-      '<span><i class="fas fa-code-branch"></i>&nbsp; ' + stargazers_count[i] + '</span>' +
+      '<span style="display:inline-block;"><i class="fas fa-code"></i>&nbsp; ' + arr[i].language + '</span>' +
+      '<span><i class="fas fa-star"></i>&nbsp; ' + arr[i].forks + '</span>' +
+      '<span><i class="fas fa-code-branch"></i>&nbsp; ' + arr[i].stargazers_count + '</span>' +
       '</div>' +
       '</section>' +
       '</a>';
