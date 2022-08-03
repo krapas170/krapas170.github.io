@@ -112,7 +112,7 @@ function showReleases(arr) {
       console.log(tag_name2);
 
       beschreibung = body[i].replace("**Full Changelog**: https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "", "<br><br><b>Full Changelog</b>: <a href='https://github.com/krapas170/Java-Memory/compare/" + tag_name1 + "..." + tag_name2 + "'><tt>" + tag_name1 + "..." + tag_name2 + "</tt></a>");
-
+      beschreibung = body[i].replace("## What's Changed", "<br><h2>What's Changed</h2></br>")
     } else {
       let tag_name2 = [];
       tag_name2 = arr[i].tag_name;
