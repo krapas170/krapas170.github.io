@@ -592,11 +592,15 @@ body {
         rgba(10, 10, 10, 0)),
       url("https://krapas170.github.io/background.jfif") !important;
   }
+
   #forks_section {
     columns: 1;
+    transform: none !important
   }
+
   #work_section {
     columns: 1;
+    transform: none !important
   }
 }
 
@@ -614,36 +618,46 @@ body {
   background-color: var(--color-canvas-default);
 }
 
-tt, code, samp {
-  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+tt,
+code,
+samp {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 12px;
 }
-.markdown-body code, .markdown-body tt {
+
+.markdown-body code,
+.markdown-body tt {
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(158,167,179,0.4);
+  background-color: rgba(158, 167, 179, 0.4);
   border-radius: 6px;
 }
+
 .commit-link {
   font-weight: 400;
   color: #71b7ff;
 }
+
 a:-webkit-any-link {
   cursor: pointer;
 
 }
+
 a {
   color: #71b7ff;
   text-decoration: none;
   position: unset !important;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 801px) {
   #forks_section {
     columns: 2;
+    transform: none !important
   }
+
   #work_section {
     columns: 2;
+    transform: none !important
   }
 }
