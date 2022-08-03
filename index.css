@@ -592,6 +592,12 @@ body {
         rgba(10, 10, 10, 0)),
       url("https://krapas170.github.io/background.jfif") !important;
   }
+  #forks_section {
+    columns: 1;
+  }
+  #work_section {
+    columns: 1;
+  }
 }
 
 .box {
@@ -632,9 +638,12 @@ a {
   text-decoration: none;
   position: unset !important;
 }
-#forks_section {
-  columns: 2;
-}
-#work_section {
-  columns: 2;
+
+@media (min-width: 800px) {
+  #forks_section {
+    columns: 2;
+  }
+  #work_section {
+    columns: 2;
+  }
 }
