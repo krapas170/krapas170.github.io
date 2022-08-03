@@ -648,6 +648,7 @@ a {
   color: #71b7ff;
   text-decoration: none;
   position: unset !important;
+  transform: none !important
 }
 
 @media (min-width: 801px) {
